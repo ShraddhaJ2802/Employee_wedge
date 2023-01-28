@@ -1,17 +1,21 @@
 public class Main {
     public static void main(String[] args) {
         int isPresent=0;
+        int isPartTime=2;
         int isAbscent=1;
         int dailySalery;
         int workHours;
         int salaryPerHours=20;
-        int checkAttendence=(int)((Math.random()*10)%2);
+        int checkAttendence=(int)((Math.random()*10)%3);
         if(checkAttendence==isPresent)
         {
             System.out.println("Emloyee is present");
             workHours=8;
-        }
-        else
+        } else if (checkAttendence==isPartTime)
+        {
+            System.out.println("Employee is parttime");
+            workHours=4;
+        } else
         {
             System.out.println("Emloyee is abscent");
             workHours=0;
