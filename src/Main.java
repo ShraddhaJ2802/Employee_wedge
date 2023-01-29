@@ -7,7 +7,21 @@ public class Main {
         int workHours;
         int salaryPerHours=20;
         int checkAttendence=(int)((Math.random()*10)%3);
-        if(checkAttendence==isPresent)
+        switch (checkAttendence)
+        {
+            case 0:
+                    System.out.println("Employee is present");
+                    workHours=8;
+                    break;
+            case 1:
+                   System.out.println("Employee is parttime");
+                   workHours=4;
+                   break;
+            default:
+                   System.out.println("Emloyee is abscent");
+                   workHours=0;
+        }
+     /*   if(checkAttendence==isPresent)
         {
             System.out.println("Emloyee is present");
             workHours=8;
@@ -19,7 +33,7 @@ public class Main {
         {
             System.out.println("Emloyee is abscent");
             workHours=0;
-        }
+        }*/
         dailySalery=workHours*salaryPerHours;
         System.out.println("Daily salary is:"+dailySalery);
     }
