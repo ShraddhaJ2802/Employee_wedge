@@ -4,23 +4,44 @@ public class Main {
         int isPartTime=2;
         int isAbscent=1;
         int dailySalery;
-        int workHours;
+        int workHours=0;
         int salaryPerHours=20;
-        int checkAttendence=(int)((Math.random()*10)%3);
-        switch (checkAttendence)
+        int numOfWorkingDays=2;
+        int totalEmpWage=0;
+        int totalEmpHrs=0,totalWorkingDays=0;
+        int maxHrsInMonth=10;
+
+
+        while (totalEmpHrs <=maxHrsInMonth && totalWorkingDays <numOfWorkingDays)
         {
-            case 0:
+
+            totalWorkingDays++;
+            int checkAttendence=(int)((Math.random()*10)%3);
+
+             // for (int day=0; day < numOfWorkingDays; day++) {
+
+               switch (checkAttendence) {
+                case 0:
                     System.out.println("Employee is present");
-                    workHours=8;
+                    workHours = 8;
                     break;
-            case 1:
-                   System.out.println("Employee is parttime");
-                   workHours=4;
-                   break;
-            default:
-                   System.out.println("Emloyee is abscent");
-                   workHours=0;
+                case 1:
+                    System.out.println("Employee is parttime");
+                    workHours = 4;
+                    break;
+                default:
+                    System.out.println("Emloyee is abscent");
+                    workHours = 0;
+            }
+            totalEmpHrs+=workHours;
+            System.out.println("Days#: "+totalWorkingDays +"Emp hr: "+workHours);
+            //dailySalery=workHours*salaryPerHours;
+            //totalEmpWage+=dailySalery;
+
+            //System.out.println("Daily salary is:"+dailySalery);
         }
+        totalEmpWage=workHours*salaryPerHours;
+        System.out.println("Total employee sallary is:"+totalEmpWage);
      /*   if(checkAttendence==isPresent)
         {
             System.out.println("Emloyee is present");
@@ -34,7 +55,6 @@ public class Main {
             System.out.println("Emloyee is abscent");
             workHours=0;
         }*/
-        dailySalery=workHours*salaryPerHours;
-        System.out.println("Daily salary is:"+dailySalery);
+
     }
 }
