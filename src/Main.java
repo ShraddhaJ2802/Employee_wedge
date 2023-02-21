@@ -4,14 +4,15 @@ public class Main {
     int isPartTime=2;
     int isAbscent=1;
     int dailySalery;
-    int workHours=0;
-    int salaryPerHours=20;
-    int numOfWorkingDays=2;
-    int totalEmpWage=0;
-    int totalEmpHrs=0,totalWorkingDays=0;
-    int maxHrsInMonth=10;
-    public  int computeEmpWage ()
+
+  //  int salaryPerHours=20;
+   // int numOfWorkingDays=2;
+
+    //int maxHrsInMonth=10;
+    public  int computeEmpWage (String company , int salaryPerHours , int numOfWorkingDays , int maxHrsInMonth)
         {
+            int workHours=0;  int totalEmpWage=0;
+            int totalEmpHrs=0, totalWorkingDays=0;
             while (totalEmpHrs <= maxHrsInMonth && totalWorkingDays < numOfWorkingDays) {
 
                 totalWorkingDays++;
@@ -60,7 +61,8 @@ public class Main {
     public static void main(String[] args) {
 
         Main emp=new Main();
-        emp.computeEmpWage();
+        emp.computeEmpWage("DMart" , 20 ,2 ,10);
+        emp.computeEmpWage("Reliance" , 10 ,4 ,20);
 
     }
 }
